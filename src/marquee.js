@@ -1,0 +1,1 @@
+export const marquee =()=>console.log('这是轮播图');

@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("这是轮播图"),console.log("这是tab栏")})();

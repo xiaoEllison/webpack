@@ -1,0 +1,1 @@
+export const tab =()=>console.log('这是tab栏');

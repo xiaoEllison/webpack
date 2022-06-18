@@ -1,0 +1,6 @@
+body {
+  background-color: pink;
+}
+body div:nth-child(2) {
+  background-color: green;
+}
