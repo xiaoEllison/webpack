@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-// const { VueLoaderPlugin } = require("vue-loader");
+const { VueLoaderPlugin } = require("vue-loader");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: "development",
@@ -15,8 +16,9 @@ module.exports = {
       template: "./public/index.html",
       filename: "index.html",
     }),
-    // ,
-    // new VueLoaderPlugin(),
+    
+    new VueLoaderPlugin(),
+    new MiniCssExtractPlugin()
   ],
 
   //浏览器配置，port取值0-65535
@@ -29,11 +31,11 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.less$/i,
-        use: ["style-loader", "css-loader", "less-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "less-loader"],
       },
       //图片格式
       {
@@ -62,10 +64,10 @@ module.exports = {
           },
         },
       },
-    //   {
-    //     test: /\.vue$/,
-    //     use: ["vue-loader"]
-    //   },
+      {
+        test: /\.vue$/,
+        use: ["vue-loader"]
+      },
     ],
   },
 };

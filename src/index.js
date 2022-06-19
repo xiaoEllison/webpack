@@ -1,6 +1,6 @@
 import { marquee } from "./marquee";
 import { tab } from "./tab";
-
+import App from './APP.vue' // 根vue文件
 
 marquee()
 tab()
@@ -27,5 +27,8 @@ import "./assets/fonts/iconfont.css"
 fn()
 
 //
-// import APP from './APP.vue'
+
+
+
+
 
